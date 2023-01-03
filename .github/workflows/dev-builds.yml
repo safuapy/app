@@ -48,10 +48,10 @@ jobs:
       - name: Build app
         run: npm run build:mac
         env:
-# NO NEED TO SIGN THE CODE FOR NOW
+          # NO NEED TO SIGN THE CODE FOR NOW
           #CSC_LINK: ${{ secrets.CSC_LINK}}
           #CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD}}
-          #CI: true
+          CI: true
           #APPLE_ID: ${{ secrets.APPLE_ID}}
           #APPLE_ID_PASS: ${{ secrets.APPLE_ID_PASS}}
 
