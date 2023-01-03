@@ -31,33 +31,27 @@ jobs:
           path: 'dist/DeFi Wallet-${{ env.PACKAGE_VERSION}}.AppImage'
 
   build_mac_version:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+  runs-on: macos-latest
+  steps:
+    - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
 
-      - uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd
-        with:
-          node-version: 16
+    - uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd
+      with:
+        node-version: 16
 
-      - name: Get App Version
-        uses: nyaa8/package-version@5c5cc7daa32fab488b44d448f080aa9ef7255a44
+    - name: Get App Version
+      uses: nyaa8/package-version@5c5cc7daa32fab488b44d448f080aa9ef7255a44
 
-      - name: install dependencies
-        run: npm cache clean --force && npm run init
+    - name: install dependencies
+      run: npm cache clean --force && npm run init
 
-      - name: Build app
-        run: npm run build:mac
-        env:
-          CSC_LINK: ${{ secrets.CSC_LINK}}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD}}
-          CI: true
-          APPLE_ID: ${{ secrets.APPLE_ID}}
-          APPLE_ID_PASS: ${{ secrets.APPLE_ID_PASS}}
+    - name: Build app
+      run: npm run build:mac
 
-      - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
-        with:
-          name: mac-build
-          path: 'dist/DeFi Wallet-${{ env.PACKAGE_VERSION}}.dmg'
+    - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+      with:
+        name: mac-build
+        path: 'dist/DeFi Wallet-${{ env.PACKAGE_VERSION}}.dmg'
 
   build_windows_version:
     runs-on: windows-latest
