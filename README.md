@@ -13,7 +13,7 @@
 <img alt="Subreddit subscribers" src="https://img.shields.io/reddit/subreddit-subscribers/defiblockchain?style=social">
 </a>
 
-# DeFi Desktop Wallet
+# Safu Desktop Wallet
 
 Use DeFi Desktop Wallet to interact with DeFiChain. It is a wallet for \$DFI, wrapped BTC, ETH, USDT. Liquidity mine, use the DEX, create masternodes, and more.
 ![Image](https://defichain.com/img/app/liquidity@2x.png)
